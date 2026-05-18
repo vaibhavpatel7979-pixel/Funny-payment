@@ -10,18 +10,46 @@
 
   <style>
 
+    @keyframes glow {
+
+      0% {
+        box-shadow: 0 0 10px #00ffcc;
+      }
+
+      50% {
+        box-shadow: 0 0 35px #00ffcc;
+      }
+
+      100% {
+        box-shadow: 0 0 10px #00ffcc;
+      }
+
+    }
+
+    @keyframes pulse {
+
+      0% {
+        transform: scale(1);
+      }
+
+      50% {
+        transform: scale(1.05);
+      }
+
+      100% {
+        transform: scale(1);
+      }
+
+    }
+
     @keyframes shake {
+
       0% { transform: translateX(0px); }
       25% { transform: translateX(5px); }
       50% { transform: translateX(-5px); }
       75% { transform: translateX(5px); }
       100% { transform: translateX(0px); }
-    }
 
-    @keyframes glow {
-      0% { box-shadow: 0 0 5px #00ffcc; }
-      50% { box-shadow: 0 0 25px #00ffcc; }
-      100% { box-shadow: 0 0 5px #00ffcc; }
     }
 
     body {
@@ -35,27 +63,29 @@
 
       font-family: Arial, sans-serif;
 
+      text-align: center;
+
       display: flex;
       justify-content: center;
       align-items: center;
 
       min-height: 100vh;
 
-      text-align: center;
-
     }
 
     .container {
 
-      padding: 30px;
       max-width: 700px;
+
+      padding: 30px;
 
     }
 
     h1 {
 
-      font-size: 42px;
       color: #00ffcc;
+
+      font-size: 42px;
 
       cursor: pointer;
 
@@ -64,29 +94,32 @@
     p {
 
       font-size: 20px;
+
       line-height: 1.7;
 
     }
 
     .btn {
 
-      animation: glow 2s infinite;
-
       display: inline-block;
 
       margin-top: 25px;
 
-      padding: 15px 30px;
+      padding: 18px 35px;
 
-      background: #6a00ff;
-
-      color: white;
+      border-radius: 15px;
 
       text-decoration: none;
 
-      border-radius: 12px;
+      color: white;
 
-      font-size: 20px;
+      font-size: 22px;
+
+      font-weight: bold;
+
+      background: linear-gradient(45deg, #ff00cc, #3333ff);
+
+      animation: glow 2s infinite, pulse 1.5s infinite;
 
       transition: 0.3s;
 
@@ -94,28 +127,27 @@
 
     .btn:hover {
 
-      background: #8f3cff;
-
-      transform: scale(1.05);
+      transform: scale(1.08);
 
     }
 
     .insta-btn {
 
-      background: #E1306C;
+      background: linear-gradient(45deg, #E1306C, #ff7b00);
 
     }
 
     iframe {
 
-      margin-top: 25px;
-
       width: 100%;
+
       height: 315px;
 
-      border: none;
+      margin-top: 25px;
 
       border-radius: 15px;
+
+      border: none;
 
     }
 
@@ -149,6 +181,16 @@
 
     }
 
+    .small-text {
+
+      font-size: 12px;
+
+      opacity: 0.7;
+
+      margin-top: 15px;
+
+    }
+
   </style>
 
 </head>
@@ -159,13 +201,13 @@
 
     <!-- TITLE -->
 
-    <h1 onclick="showFunnyAlert()">
+    <h1 onclick="titleClick()">
 
       I'm Vaibhav Patel 😎
 
     </h1>
 
-    <!-- TEXT -->
+    <!-- MAIN TEXT -->
 
     <p>
 
@@ -187,13 +229,13 @@
       class="btn"
       href="upi://pay?pa=vaibhavpatel7979@ybl&pn=Vaibhav%20Patel&am=21&cu=INR">
 
-      Haa Ab Aa Hi Gye Ho To ₹21 Bhej Do 💸
+      ✨ TAP AND SEE MAGIC ✨
 
     </a>
 
     <!-- INSTAGRAM -->
 
-    <div style="margin-top:45px;">
+    <div style="margin-top:50px;">
 
       <h2>
 
@@ -201,22 +243,12 @@
 
       </h2>
 
-      <p style="font-size:18px;">
-
-        Agar website mast lagi ho 😎
-
-        <br>
-
-        To Insta pe feedback drop kar do 📸🔥
-
-      </p>
-
       <a
         href="https://instagram.com/patel_vaibhav_01"
         target="_blank"
         class="btn insta-btn">
 
-        Instagram Pe Feedback Do 💌
+        📸 TAP FOR FEEDBACK
 
       </a>
 
@@ -250,33 +282,49 @@
 
       </button>
 
-      <!-- SONG 1 -->
+      <!-- FIRST SONG VIDEO -->
 
       <iframe
         src="https://www.youtube.com/embed/LMnJp_dSdnw"
         allowfullscreen>
       </iframe>
 
-      <!-- SONG 2 -->
+      <!-- OTHER SONG BUTTONS -->
 
-      <iframe
-        src="https://www.youtube.com/embed/bP8ATWCvqzw"
-        allowfullscreen>
-      </iframe>
+      <div style="margin-top:30px;">
 
-      <!-- SONG 3 -->
+        <a
+          class="btn"
+          target="_blank"
+          href="https://youtu.be/bP8ATWCvqzw?si=00NtsM3uM4yFlM74">
 
-      <iframe
-        src="https://www.youtube.com/embed/rFU28HBP7B0"
-        allowfullscreen>
-      </iframe>
+          💔 Dil Tutne Wala Song
 
-      <!-- SONG 4 -->
+        </a>
 
-      <iframe
-        src="https://www.youtube.com/embed/CnEqrgMlWLQ"
-        allowfullscreen>
-      </iframe>
+        <br>
+
+        <a
+          class="btn"
+          target="_blank"
+          href="https://youtu.be/rFU28HBP7B0?si=5plsDU0C2HEVL4HI">
+
+          🚨 Mood Fresh Karne Ke Liye Tap
+
+        </a>
+
+        <br>
+
+        <a
+          class="btn"
+          target="_blank"
+          href="https://youtu.be/CnEqrgMlWLQ?si=XY6fTlZczot0zgaV">
+
+          😈 Last Wala Dangerous Hai
+
+        </a>
+
+      </div>
 
     </div>
 
@@ -284,19 +332,19 @@
 
     <div style="margin-top:50px;">
 
-      <h1 style="color:#00ffcc;">
+      <h1>
 
         THANK YOU 😁
 
       </h1>
 
-      <p style="font-size:18px;">
+      <p>
 
         JUST A BEGINNER 🚀
 
       </p>
 
-      <p style="font-size:12px;opacity:0.7;">
+      <p class="small-text">
 
         its just for fun not a fraud
 
@@ -316,14 +364,14 @@
 
       alert('Welcome 😎\\nAb aa hi gaye ho to ₹21 bhej do 😂');
 
-    }, 1500);
+    }, 1200);
 
-    // CHANGING TAB TITLE
+    // TAB TITLE CHANGE
 
     const titles = [
 
+      '✨ Tap And See Magic ✨',
       '₹21 bhej do 😭',
-      'Kanjoosi mat karo 😂',
       'Vaibhav Patel Official 😎'
 
     ];
@@ -340,7 +388,7 @@
 
     // TITLE CLICK
 
-    function showFunnyAlert() {
+    function titleClick() {
 
       alert('Screenshot mat lena 😭\\nPaise bhej dena 😂');
 
@@ -352,7 +400,7 @@
 
       const btn = document.querySelector('.funny-btn');
 
-      btn.innerHTML = 'Aree dabao mat 😭 Paisa bhejo 😂';
+      btn.innerHTML = 'Aree dabao mat 😭';
 
       btn.style.animation = 'shake 0.5s infinite';
 
